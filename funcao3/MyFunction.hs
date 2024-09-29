@@ -12,13 +12,12 @@
     selectBoundingBoxesWithHighScore :: [(Float, Float, Float, Float)] -> [Float] -> Float -> [(Float, Float, Float, Float)]
 -}
 
-selectBoundingBoxesWithHighScore :: [(Float, Float, Float, Float)] -> [Float] -> Float -> [(Float, Float, Float, Float)]
 
 zipBoxesAndScores :: [(Float, Float, Float, Float)] -> [Float] -> [((Float, Float, Float, Float), Float)]
 zipBoxesAndScores boundingBoxes scores = zip boundingBoxes scores 
 
 isHighScore :: [((Float, Float, Float, Float), Float)] -> Float -> Bool
-isHighScore BoxesAndScores limiar = snd BoxesAndScores > limiar
+isHighScore boxesAndScores limiar = snd boxesAndScores > limiar
 
-
+selectBoundingBoxesWithHighScore :: [(Float, Float, Float, Float)] -> [Float] -> Float -> [(Float, Float, Float, Float)]
 selectBoundingBoxesWithHighScore boundingBoxes scores limiar = filter isHighScore zipBoxesAndScores
