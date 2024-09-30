@@ -12,7 +12,7 @@ Para esse problema temos inputs principais
 - Uma lista de Bounding Boxes onde cada Bounding Box é representado por uma tupla de 4 Floats
 - Uma lista de Scores do tipo Float
 - Um valor limiar a qual vamos usar como parâmetro para a filtragem
-<br>
+
 ## Desenvolvimento do exercício
 
 ### `zipBoxesAndScores` - **Agrupamento de BBoxes e Scores**
@@ -24,7 +24,7 @@ zipBoxesAndScores boundingBoxes scores = zip boundingBoxes scores
 ```
 - **Parâmetros:** Lista de Bounding Boxes e a lista de Scores
 - **Saída:** Uma lista de pares, onde cada par é uma Bounding Box e seu Score
-<br>
+
 ### `isHighScore` - **Comparando o Score e o Limiar**
 O intuito dessa função é servir como função auxiliar para a próxima. Essa função recebe o limiar e um par de dados (Bounding Box e Score), a fim de comparar o valor do limiar com o score e retornar se o score é maior que o limiar.
 
@@ -34,7 +34,7 @@ isHighScore limiar (_, score) = score > limiar
 ```
 - **Parâmetros:** Limiar e o par de dados
 - **Saída:** Valor booleano, indicando se o limiar é maior que o score
-<br>
+
 ### `selectBoundingBoxesWithHighScore` - **Seleção de Bounding Boxes**
 Por fim, temos a função principal, que filtra as Bounding Boxes com score maior que o limiar digitado. Para ter tal efeito, foi preciso combinar as duas funções auxiliares para produzir o resultado desejado. Primeiro ela cria um par de dados com `zipBoxesAndScores` e filtra os dados de acordo com `isHighScore`, para no fim extrair apenas as Bounding Boxes com `map fst`
 
@@ -45,7 +45,7 @@ selectBoundingBoxesWithHighScore boundingBoxes scores limiar =
 ```
 - **Parâmetros:** Bounding Boxes, Scores e Limiar
 - **Saída:** Apenas as Bounding Boxes com Score maior que o limiar
-  <br>
+
 ## Referências
 1. [Listas de Duplas ZIP](https://www.youtube.com/watch?v=BGpVTurVPo4)
 2. [Tuplas - Linguagem Haskell](https://www.facom.ufu.br/~madriana/PF/Haskell3.pdf)
